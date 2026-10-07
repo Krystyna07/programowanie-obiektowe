@@ -1,0 +1,21 @@
+User Stories - System Przychodni Lekarskiej 
+
+Typ: Tworzenie / Transakcja
+Jako Lekarz
+chcę wystawić konkretnemu pacjentowi receptę wraz z listą leków i dawkowaniem podczas wizyty.
+Kryterium akceptacji: System przypisuje receptę do pacjenta o danym id.
+
+Typ: Wyszukiwanie / Przeglądanie
+Jako Pacjent
+chcę zaplanować wizytę w przychodni, danego dnia u wybranego specjalisty i móc wybrać również jej godzinę.
+Kryterium akceptacji: System wyświetla użytkownikowi wolne sloty czasowe przypisane do lekarzy i pozwala wybrać spośród nich.
+
+Typ: Zarządcza / Administracyjna
+Jako Pacjent
+chcę móc zrezygnować z danej wizyty, jeśli ostatecznie termin nie będzie mi pasować.
+Kryterium akceptacji: Wizyta może zostać odwołana, a wtedy jednocześnie zwalniany jest slot czasowy.
+
+Typ: Logika biznesowa
+Jako Lekarz
+chcę otrzymać wynagrodzenie za każdego pacjenta przyjętego w moich godzinach pracy
+Kryterium akceptacji: stawka_za_wizyte jako atrybut lekarza.
