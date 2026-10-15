@@ -19,3 +19,8 @@ Typ: Logika biznesowa
 Jako Lekarz
 chcę otrzymać wynagrodzenie za każdego pacjenta przyjętego w moich godzinach pracy
 Kryterium akceptacji: stawka_za_wizyte jako atrybut lekarza.
+
+Typ: Operacyjna / Statusowa
+Jako Lekarz
+chcę potwierdzić odbycie się wizyty po jej zakończeniu, aby zmienić jej status w systemie na zrealizowaną i odnotować wykonanie usługi. 
+Kryterium akceptacji: Wywołanie metody potwierdz() w obiekcie Wizyta zmienia status wizyty na potwierdzony/zrealizowany. 
