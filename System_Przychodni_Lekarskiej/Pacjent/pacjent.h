@@ -1,30 +1,33 @@
-#ifndef RECEPTA_H
-#define RECEPTA_H
+#ifndef PACJENT_H
+#define PACJENT_H
 
-#include <string>
+#include "osoba.h"
 #include <vector>
-#include <memory>
-#include "pozycja_recepty.h"
+#include <string>
 
 using namespace std;
 
-class Recepta {
+class Wizyta;
+
+class Pacjent : public Osoba {
 private:
-    string data_wystawienia;
-    vector<unique_ptr<PozycjaRecepty>> pozycje;
-    int id_recepty;
     int id_pacjenta;
+    vector<Wizyta*> wizyty;
 
 public:
-    Recepta(
-        int id_recepty,
-        int id_pacjenta, 
-        string data_wystawienia);
+    Pacjent(
+        string imie, 
+        string nazwisko, 
+        int id, 
+        int id_pacjenta);
 
-    void dodajPozycja(string nazwa_leku, string dawkowanie);
-    int getIdRecepty() const;
+    void dodajWizyta(Wizyta* wizyta);
+    void usunWizyta(Wizyta* wizyta);
+
     int getIdPacjenta() const;
-    const vector<unique_ptr<PozycjaRecepty>>& getPozycje() const;
+    const vector<Wizyta*>& getWizyty() const;
+
+    void wyswietlInformacje() const override;
 };
 
 #endif
