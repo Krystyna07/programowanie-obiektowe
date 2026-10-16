@@ -11,7 +11,7 @@ using namespace std;
 class Recepta {
 private:
     string data_wystawienia;
-    vector<unique_ptr<pozycja_recepty>> pozycje;
+    vector<unique_ptr<PozycjaRecepty>> pozycje;
     int id_recepty;
     int id_pacjenta;
 
@@ -24,7 +24,7 @@ public:
     void dodajPozycja(string nazwa_leku, string dawkowanie);
     int getIdRecepty() const;
     int getIdPacjenta() const;
-    const vector<unique_ptr<pozycja_recepty>>& getPozycje() const;
+    const vector<unique_ptr<PozycjaRecepty>>& getPozycje() const;
 };
 
 #endif
