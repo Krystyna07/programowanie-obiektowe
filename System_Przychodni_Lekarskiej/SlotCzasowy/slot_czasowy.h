@@ -2,9 +2,10 @@
 #define SLOT_CZASOWY_H
 
 #include <string>
-#include "lekarz.h"
 
 using namespace std;
+
+class Lekarz;
 
 class SlotCzasowy {
 private:
@@ -13,12 +14,10 @@ private:
     Lekarz* lekarz;
 
 public:
-    SlotCzasowy(
-        string termin, 
-        Lekarz* lekarz);
+ 
+    SlotCzasowy(string termin, Lekarz* lekarz = nullptr);
 
     string getTermin() const;
-    bool isCzyWolny() const;
     Lekarz* getLekarz() const;
 
     void zajmi();
