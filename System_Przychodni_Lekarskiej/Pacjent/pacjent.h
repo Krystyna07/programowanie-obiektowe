@@ -12,6 +12,7 @@ class Wizyta;
 class Pacjent : public Osoba {
 private:
     int id_pacjenta;
+    string pesel;
     vector<Wizyta*> wizyty;
 
 public:
@@ -19,12 +20,14 @@ public:
         string imie, 
         string nazwisko, 
         int id, 
-        int id_pacjenta);
+        int id_pacjenta,
+        string pesel = "");
 
     void dodajWizyta(Wizyta* wizyta);
     void usunWizyta(Wizyta* wizyta);
 
     int getIdPacjenta() const;
+    string getPesel() const;
     const vector<Wizyta*>& getWizyty() const;
 
     void wyswietlInformacje() const override;
