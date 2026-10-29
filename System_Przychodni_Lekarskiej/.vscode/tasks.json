@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "Lekarz/lekarz.cpp",
+                "Osoba/osoba.cpp",
+				"Pacjent/pacjent.cpp",
+                "PozycjaRecepty/pozycja_recepty.cpp",
+                "Recepta/recepta.cpp",
+                "SlotCzasowy/slot_czasowy.cpp",
+                "System Przychodni Lekarskiej/system_przychodni.cpp",
+                "Wizyta/wizyta.cpp",
+                "-I.",
+                "-I",
+                "Lekarz",
+                "-I",
+                "Osoba",
+                "-I",
+				"Pacjent",
+                "-I",
+                "PozycjaRecepty",
+                "-I",
+                "Recepta",
+                "-I",
+                "SlotCzasowy",
+                "-I",
+                "System Przychodni Lekarskiej",
+                "-I",
+                "Wizyta",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: C:\\mingw64\\bin\\g++.exe"
+        }
+    ]
+}
