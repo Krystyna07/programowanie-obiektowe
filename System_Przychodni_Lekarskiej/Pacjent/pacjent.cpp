@@ -3,8 +3,12 @@
 #include <iostream>
 #include <algorithm>
 
-Pacjent::Pacjent(string imie, string nazwisko, int id, int id_pacjenta)
-    : Osoba(imie, nazwisko, id), id_pacjenta(id_pacjenta) {}
+Pacjent::Pacjent(string imie, string nazwisko, int id, int id_pacjenta, string pesel)
+    : Osoba(imie, nazwisko, id), id_pacjenta(id_pacjenta), pesel(pesel) {}
+
+string Pacjent::getPesel() const {
+    return pesel;
+}
 
 void Pacjent::dodajWizyta(Wizyta* wizyta) {
     if (wizyta != nullptr) {
