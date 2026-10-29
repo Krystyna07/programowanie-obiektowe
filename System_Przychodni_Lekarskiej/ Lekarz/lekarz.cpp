@@ -27,12 +27,13 @@ void Lekarz::przeprowadzicWizyta(Wizyta& wizyta) {
 
 unique_ptr<Recepta> Lekarz::wystawRecepta(Wizyta& wizyta, int id_recepty) {
 int id_pacjenta = 0;
-if (wizyta.getPacjent != nullptr) {
+if (wizyta.getPacjent() != nullptr) {
     id_pacjenta = wizyta.getPacjent()->getIdPacjenta();
 }
 
 string data = wizyta.getDataWizyty();
 auto nowaRecepta = make_unique<Recepta>(id_recepty, id_pacjenta, data);
+
 
 cout << "DR" << imie << "" << nazwisko 
     << " wystawil recepte nr " << id_recepty
