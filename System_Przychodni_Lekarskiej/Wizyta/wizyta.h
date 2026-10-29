@@ -13,31 +13,33 @@ class Pacjent;
 
 class Wizyta {
 private:
-    string data_wizyty;
-    SlotCzasowy* slot;
     int id_wizyty;
+    string data_wizyty;
     string status;
-    Lekarz* lekarz;
-    Pacjent* pacjent;
-    unique_ptr<Recepta> recepta;
+    shared_ptr<SlotCzasowy> slot;
+    shared_ptr<Lekarz> lekarz;
+    shared_ptr<Pacjent> pacjent;
+    shared_ptr<Recepta> recepta;
+
 public:
     Wizyta(
         int id_wizyty, 
-        string data_wizyty, 
-        SlotCzasowy* slot, 
-        Lekarz* lekarz, 
-        Pacjent* pacjent);
+        shared_ptr<Lekarz> lekarz, 
+        shared_ptr<Pacjent> pacjent, 
+        shared_ptr<SlotCzasowy> slot,
+        string data_wizyty = "");
 
-    void odwolaj();
+    void odwolajWizyte();
     void potwierdz();
-    void przypiszRecepte(unique_ptr<Recepta> rec);
+    void przypiszRecepte(shared_ptr<Recepta> rec);
 
     int getIdWizyty() const;
     string getStatus() const;
-    Lekarz* getLekarz() const;
-    Pacjent* getPacjent() const;
-    SlotCzasowy* getSlot() const;
-    Recepta* getRecepta() const;
+    shared_ptr<Lekarz> getLekarz() const;
+    shared_ptr<Pacjent> getPacjent() const;
+    shared_ptr<SlotCzasowy> getSlot() const;
+    shared_ptr<Recepta> getRecepta() const;
+    string getDataWizyty() const;
 };
 
 #endif
