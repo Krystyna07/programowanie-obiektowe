@@ -3,35 +3,39 @@
 
 #include <vector>
 #include <memory>
+#include <string>
 #include "lekarz.h"
 #include "pacjent.h"
 #include "wizyta.h"
+#include "slot_czasowy.h"
+#include "pozycja_recepty.h"
+#include "recepta.h"
 
 using namespace std;
 
 class SystemPrzychodni {
 private:
-    vector<unique_ptr<Lekarz>> wszyscy_lekarze;
-    vector<unique_ptr<Pacjent>> wszyscy_pacjenci;
-    vector<unique_ptr<Wizyta>> lista_wizyt;
-    int next_wizyta_id = 1;
+    vector<shared_ptr<Lekarz>> listaLekarzy;
+    vector<shared_ptr<Pacjent>> listaPacjentow;
+    vector<shared_ptr<SlotCzasowy>> katalogSlotow;
+    vector<shared_ptr<Wizyta>> listaWizyt;
 
 public:
     SystemPrzychodni() = default;
 
-    void dodajLekarza(unique_ptr<Lekarz> lekarz); 
-    void dodajPacjenta(unique_ptr<Pacjent> pacjent);
+    void dodajPacjenta(shared_ptr<Pacjent> pacjent);
+    void dodajLekarza(shared_ptr<Lekarz> lekarz);
+    void dodajSlot(shared_ptr<SlotCzasowy> slot);
 
-    Wizyta* zarezerwujWizyta(
-        int id_pacjenta, 
-        int id_lekarza, 
-        SlotCzasowy* slot);
-    bool odwolajWizyta(int id_wizyty);
-    vector<SlotCzasowy*> wolnesloty(int id_lekarza) const;
+    void wyswietlLekarzy() const;
 
-    const vector<unique_ptr<Lekarz>>& getWszyscyLekarze() const;
-    const vector<unique_ptr<Pacjent>>& getWszyscyPacjenci() const;
-    const vector<unique_ptr<Wizyta>>& getListaWizyt() const;
+    shared_ptr<Wizyta> rezerwujWizyte(const string& peselPacjenta, const string& pwzLekarza, int idSlotu);
+    void wystawRecepte(int idWizyty, const vector<PozycjaRecepty>& pozycje);
+    void odwolajWizyte(int idWizyty);
+
+    const vector<shared_ptr<Lekarz>>& getListaLekarzy() const;
+    const vector<shared_ptr<Pacjent>>& getListaPacjentow() const;
+    const vector<shared_ptr<Wizyta>>& getListaWizyt() const;
 };
 
 #endif
