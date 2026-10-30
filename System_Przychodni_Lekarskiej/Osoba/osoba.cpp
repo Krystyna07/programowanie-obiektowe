@@ -11,6 +11,6 @@ string Osoba::getNazwisko() const {
     return nazwisko;
 }
 
-string Osoba::getId() const {
+int Osoba::getId() const {
     return id;
 }
