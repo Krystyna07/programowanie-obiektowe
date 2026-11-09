@@ -32,10 +32,9 @@ const vector<Wizyta*>& Pacjent::getWizyty() const {
 }
 
 void Pacjent::wyswietlInformacje() const {
-    cout << "ID Osoby: " << id
-    << "ID Pacjenta: " << id_pacjenta
-    << "Imie:" << imie 
-    <<"Nazwisko" << nazwisko 
-    << "Zaplanowane wizyty: " << wizyty.size() << endl;
+    cout << "ID Pacjenta: " << id_pacjenta 
+         << " | Imie i nazwisko: " << imie << " " << nazwisko 
+         << " | PESEL: " << pesel 
+         << " | Zaplanowane wizyty: " << wizyty.size() << "\n";
 }
 
