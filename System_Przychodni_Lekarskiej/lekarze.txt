@@ -1,0 +1,10 @@
+Jan;Kowalski;1;Kardiolog;1001;120
+Maria;Wisniewska;2;Neurolog;1002;150
+Piotr;Zielinski;3;Pediatra;1003;100
+Anna;Nowak;4;Dermatolog;1004;130
+Krzysztof;Wojcik;5;Ortopeda;1005;160
+Magdalena;Kaminska;6;Okulista;1006;140
+Tomasz;Lewandowski;7;Laryngolog;1007;110
+Agnieszka;Dabrowska;8;Endokrynolog;1008;170
+Michal;Zielinski;9;Chirurg;1009;200
+Katarzyna;Wozniak;10;Psychiatra;1010;150
