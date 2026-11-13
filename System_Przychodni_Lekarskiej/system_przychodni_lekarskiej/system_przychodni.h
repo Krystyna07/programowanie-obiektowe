@@ -27,10 +27,15 @@ public:
     void dodajLekarza(shared_ptr<Lekarz> lekarz);
     void dodajSlot(shared_ptr<SlotCzasowy> slot);
 
+    
+    bool wczytajLekarzyZPliku(const string& nazwaPliku);
+    void generujSlotyNaPolRoku();
+    shared_ptr<Pacjent> znajdzPacjentaPoPeselu(const string& pesel);
+
     void wyswietlLekarzy() const;
 
-    shared_ptr<Wizyta> rezerwujWizyte(const string& peselPacjenta, const string& pwzLekarza, int idSlotu);
-    void wystawRecepte(int idWizyty, const vector<PozycjaRecepty>& pozycje);
+    shared_ptr<Wizyta> rezerwujWizyte(const string& peselPacjenta, const string& pwzLekarza, int indeksSlotu);
+    void wystawRecepteInteraktywnie(int idWizyty, const vector<PozycjaRecepty>& pozycje);
     void odwolajWizyte(int idWizyty);
 
     const vector<shared_ptr<Lekarz>>& getListaLekarzy() const;
